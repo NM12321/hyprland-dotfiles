@@ -1,0 +1,113 @@
+/**
+* nova-dark — Unified Rofi Theme
+* Dark ink · sepia aesthetic
+**/
+* {
+background: #1a1a1aFF;
+background-alt: #222222FF;
+background-hl: #2c2c2cFF;
+foreground: #EBDBB2FF;
+foreground-dim: #7c6f64FF;
+selected: #83A598FF;
+active: #B8BB26FF;
+urgent: #FB4934FF;
+border-col: #83A59840;
+ font: "JetBrainsMono Nerd Font 13";
+background-color: transparent;
+text-color: @foreground;
+}
+window {
+transparency: "real";
+location: center;
+anchor: center;
+fullscreen: false;
+width: 580px;
+border: 1px solid;
+border-radius: 18px;
+border-color: @border-col;
+background-color: @background;
+cursor: "default";
+}
+mainbox {
+spacing: 0px;
+padding: 0px;
+background-color: @background;
+children: [ "inputbar", "listview" ];
+}
+/* ── Input bar ── */
+inputbar {
+spacing: 0px;padding: 16px 20px;
+border: 0px 0px 1px 0px;
+border-color: @border-col;
+background-color: @background;
+text-color: @foreground;
+children: [ "prompt", "entry" ];
+}
+prompt {
+padding: 0px 12px 0px 0px;
+background-color: transparent;
+text-color: @selected;
+font: "JetBrainsMono Nerd Font Bold 14";
+}
+entry {
+padding: 0px;
+background-color: transparent;
+text-color: @foreground;
+cursor: text;
+placeholder: "type to search...";
+placeholder-color: @foreground-dim;
+}
+/* ── List ── */
+listview {
+padding: 8px;
+columns: 1;
+lines: 9;
+cycle: true;
+dynamic: true;
+scrollbar: false;
+spacing: 2px;
+background-color: @background;
+}
+/* ── Elements ── */
+element {
+padding: 9px 14px;
+spacing: 12px;
+border-radius: 10px;
+background-color: transparent;
+text-color: @foreground-dim;
+cursor: pointer;}
+element normal.normal {
+background-color: transparent;
+text-color: @foreground-dim;
+}
+element alternate.normal {
+background-color: transparent;
+text-color: @foreground-dim;
+}
+element selected.normal {
+background-color: @background-hl;
+text-color: @foreground;
+border: 0px 0px 0px 2px;
+border-color: @selected;
+border-radius: 10px;
+}
+element-icon {
+size: 24px;
+background-color: transparent;
+cursor: inherit;
+}
+element-text {
+background-color: transparent;
+text-color: inherit;
+vertical-align: 0.5;
+horizontal-align: 0.0;
+cursor: inherit;
+}
+error-message {
+padding: 20px;
+border: 1px solid;
+border-radius: 12px;
+border-color: @urgent;
+background-color: @background;
+text-color: @foreground;
+}

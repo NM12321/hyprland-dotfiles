@@ -1,0 +1,105 @@
+{
+    "spacing": 6,
+    "margin-top": 10,
+    "margin-left": 10,
+    "margin-right": 10,
+    "modules-left": [
+        "hyprland/workspaces",
+        "bluetooth",
+        "memory"
+    ],
+    "modules-center": [
+        "custom/power",
+        "custom/mpris"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "network",
+        "clock"
+    ],
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "persistent-workspaces": {
+            "*": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+            ]
+        }
+    },
+    "custom/mpris": {
+        "exec": "~/.config/waybar/scripts/mpris.sh",
+        "interval": 2,
+        "max-length": 60
+    },
+    "clock": {
+        "interval": 60,
+        "format": "{:%a, %d. %b  %H:%M}",
+        "tooltip": false,
+        "on-click": "~/.config/waybar/scripts/calendar.sh"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "󰂯 {volume}%",
+        "format-muted": "󰖁 muted",
+        "format-icons": {
+            "headphone": "󰋋",
+            "headset": "󰋎",
+            "default": [
+                "󰕿",
+                "󰖀",
+                "󰕾"
+            ]
+        },
+        "scroll-step": 1,
+        "on-click": "pavucontrol",
+        "ignored-sinks": [
+            "Easy Effects Sink"
+        ]
+    },
+    "network": {
+        "interface": "wlp2s0",
+        "format-wifi": "{essid} {icon}",
+        "format-ethernet": "{ipaddr} 󰊗",
+        "format-disconnected": "󰤭",
+        "format-icons": [
+            "󰤯",
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
+        ],
+        "tooltip-format-wifi": "{essid} ({signalStrength}%) via {gwaddr}",
+        "tooltip-format-ethernet": "{ifname}",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 30
+    },
+    "custom/power": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "~/.config/rofi/powermenu.sh"
+    },
+    "network": {
+        "format-wifi": "󰖩 {essid}",
+        "format-disconnected": "󰖪 disconnected",
+        "on-click": "nm-connection-editor"
+    },
+    "memory": {
+        "interval": 30,
+        "format": " {used:0.1f}G/{total:0.1f}G "
+    },
+    "bluetooth": {
+        "format": "󰂯",
+        "format-connected": "󰂱 {device_alias}",
+        "format-disabled": "󰂲",
+        "format-off": "󰂲",
+        "tooltip-format": "{controller_alias}\n{num_connections} connected",
+        "tooltip-format-connected": "{device_enumerate}",
+        "on-click": "blueman-manager"
+    }
+}

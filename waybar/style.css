@@ -1,0 +1,136 @@
+@import "colors.css";
+
+* {
+    all: unset;
+    font-family: "JetBrainsMono Nerd Font Propo", "Rubik", "Noto Sans CJK JP", "Noto Sans CJK KR";
+    font-size: 15px;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+tooltip {
+    background-color: @bg1;
+    color: @fg;
+    padding: 8px 14px;
+    border-radius: 10px;
+}
+
+/* ── LEFT ── */
+
+#workspaces {
+    background-color: @bg1;
+    padding: 4px 6px;
+    margin: 6px 0;
+    border-radius: 10px;
+}
+
+#workspaces button {
+    background-color: transparent;
+    color: @grey1;
+    padding: 2px 8px;
+    border-radius: 8px;
+    margin: 0 2px;
+    transition: all 200ms ease-in-out;
+    min-width: 4px;
+}
+
+#workspaces button.active {
+    background-color: @orange;
+    color: @bg1;
+    min-width: 1.6rem;
+    font-weight: 600;
+}
+
+#workspaces button.empty {
+    color: @fg;
+    opacity: 0.4;
+}
+#workspaces button:hover {
+    background-color: @bg2;
+    color: @fg;
+}
+
+#bluetooth {
+    background-color: @bg1;
+    color: @blue;
+    padding: 6px 14px;
+    border-radius: 10px;
+    margin: 6px 0 6px 6px;
+    transition: all 200ms ease-in-out;
+}
+
+#bluetooth.connected {
+    color: @blue;
+}
+
+#bluetooth.disabled,
+#bluetooth.off {
+    color: @grey2;
+    opacity: 0.5;
+}
+
+#bluetooth:hover {
+    background-color: @bg2;
+    color: @fg;
+}
+
+/* ── CENTER ── */
+
+#custom-mpris {
+    background-color: @bg1;
+    color: @fg;
+    padding: 6px 16px;
+    border-radius: 10px;
+    margin: 6px 0;
+}
+#custom-mpris.paused {
+    color: @grey0;
+}
+
+#custom-mpris.stopped,
+#custom-mpris.disconnected {
+    color: @grey2;
+    opacity: 0.6;
+}
+
+/* ── RIGHT ── */
+
+#pulseaudio,
+#network,
+#clock {
+    background-color: @bg1;
+    color: @fg;
+    padding: 6px 16px;
+    border-radius: 10px;
+    margin: 6px 3px;
+}
+
+#pulseaudio.muted {
+    color: @grey0;
+}
+
+#clock {
+    font-weight: 500;
+}
+
+#custom-power {
+    background-color: @bg1;
+    color: #ffffff;
+    padding: 6px 16px;
+    border-radius: 10px;
+    margin: 6px 3px;
+    font-size: 18px;
+}
+
+#custom-power:hover {
+    background-color: #1793d1;
+}
+#memory {
+    background-color: @bg1;
+    border-radius: 10px;
+    margin: 7px 4px;
+    font-size: 14px;
+    color: orange;
+}

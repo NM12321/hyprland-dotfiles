@@ -1,0 +1,146 @@
+/**
+* Powermenu — Icons only, top center
+* Fixed: feather font → JetBrainsMono Nerd Font Mono
+* Fixed: truncation by removing text labels from .sh
+**/
+/*****----- Configuration -----*****/
+configuration {
+show-icons: false;
+}
+/*****----- Global Properties -----*****/
+@import "shared/colors.rasi"
+@import "shared/fonts.rasi"
+/*****----- Main Window -----*****/
+window {
+transparency: "real";
+location: north;
+anchor: north;
+fullscreen: false;
+width: 480px;
+x-offset: 0px;
+y-offset: 6px;
+ enabled: true;
+margin: 0px;
+padding: 0px;
+border: 0px solid;
+border-radius: 20px;
+border-color: @selected;
+cursor: "default";
+background-color: @background;
+}
+/*****----- Main Box -----*****/
+mainbox {
+enabled: true;
+spacing: 12px;
+margin: 0px;
+padding: 14px 18px;
+border: 0px solid;
+border-radius: 0px;
+border-color: @selected;background-color: transparent;
+children: [ "inputbar", "listview" ];
+}
+/*****----- Inputbar -----*****/
+inputbar {
+enabled: true;
+spacing: 12px;
+margin: 0px;
+padding: 0px;
+border: 0px;
+border-radius: 0px;
+border-color: @selected;
+background-color: transparent;
+text-color: @foreground;
+children: [ "textbox-prompt-colon", "prompt" ];
+}
+dummy {
+background-color: transparent;
+}
+textbox-prompt-colon {
+enabled: false;
+expand: false;
+padding: 8px 12px;
+border-radius: 100%;
+background-color: @urgent;
+text-color: @background;
+}
+prompt {
+enabled: true;
+padding: 6px 10px;
+border-radius: 100%;
+background-color: @active;
+text-color: @background;
+}
+/*****----- Message -----*****/
+message {
+enabled: true;
+margin: 0px;padding: 10px;
+border: 0px solid;
+border-radius: 100%;
+border-color: @selected;
+background-color: @background-alt;
+text-color: @foreground;
+}
+textbox {
+background-color: inherit;
+text-color: inherit;
+vertical-align: 0.5;
+horizontal-align: 0.5;
+placeholder-color: @foreground;
+blink: true;
+markup: true;
+}
+error-message {
+padding: 10px;
+border: 0px solid;
+border-radius: 0px;
+border-color: @selected;
+background-color: @background;
+text-color: @foreground;
+}
+/*****----- Listview -----*****/
+listview {
+enabled: true;
+columns: 5;
+lines: 1;
+cycle: true;
+dynamic: false;
+scrollbar: false;
+layout: vertical;
+reverse: false;
+fixed-height: true;
+fixed-columns: true;
+ spacing: 12px;
+margin: 0px;
+padding: 0px;
+border: 0px solid;border-radius: 0px;
+border-color: @selected;
+background-color: transparent;
+text-color: @foreground;
+cursor: "default";
+}
+/*****----- Elements -----*****/
+element {
+enabled: true;
+spacing: 0px;
+margin: 0px;
+padding: 18px 8px;
+border: 0px solid;
+border-radius: 100%;
+border-color: @selected;
+background-color: @background-alt;
+text-color: @foreground;
+cursor: pointer;
+}
+element-text {
+/* KEY FIX: use JetBrainsMono Nerd Font Mono instead of feather */
+font: "JetBrainsMono Nerd Font Mono 22";
+background-color: transparent;
+text-color: inherit;
+cursor: inherit;
+vertical-align: 0.5;
+horizontal-align: 0.5;
+}
+element selected.normal {
+background-color: var(selected);
+text-color: var(background);
+}

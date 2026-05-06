@@ -1,0 +1,409 @@
+/* =====================================================================
+   central_control.css  –  SwayNC Control Center
+   Theme: Gruvbox Hard · nova-dark
+   ===================================================================== */
+
+@define-color text            @fg;
+@define-color background      @bg0;
+@define-color background-alt  @bg1;
+@define-color background-sec  @bg2;
+@define-color selected        @green;
+@define-color hover           alpha(@green, .25);
+@define-color urgent          @red;
+
+/* ── Reset ─────────────────────────────────────────────────────────── */
+* {
+  color: @text;
+  all: unset;
+  font-size: 14px;
+  font-family: "JetBrains Mono Nerd Font 10";
+  transition: 200ms;
+}
+
+.blank-window {
+  background: transparent;
+}
+
+/* ── Control Center shell ──────────────────────────────────────────── */
+.control-center {
+  background: alpha(@bg1, .55);
+  border-radius: 24px;
+  border: 1px solid alpha(@green, .35);
+  box-shadow: 0 0 24px 0 rgba(0,0,0,.65);
+  margin: 18px;
+  padding: 12px;
+}
+
+/* ── Notifications inside CC ───────────────────────────────────────── */
+.control-center .notification-row .notification-background,
+.control-center .notification-row .notification-background .notification.critical {
+  background-color: @background-alt;
+  border-radius: 16px;
+  margin: 4px 0;
+  padding: 4px;
+}
+
+.control-center .notification-row .notification-background .notification.critical {
+  color: @urgent;
+  border: 1px solid alpha(@urgent, .5);
+}
+
+.control-center .notification-row .notification-background .notification .notification-content {
+  margin: 6px;
+  padding: 8px 6px 2px 2px;
+}
+
+.control-center .notification-row .notification-background .notification > *:last-child > * {
+  min-height: 3.4em;
+}
+
+.control-center .notification-row .notification-background .notification > *:last-child > * .notification-action {
+  background: alpha(@background-sec, .6);
+  color: @text;
+  border-radius: 12px;
+  margin: 6px;
+  border: 1px solid transparent;
+}
+
+.control-center .notification-row .notification-background .notification > *:last-child > * .notification-action:hover {
+  background: @hover;
+  border-color: alpha(@green, .4);
+}
+
+.control-center .notification-row .notification-background .notification > *:last-child > * .notification-action:active {
+  background: alpha(@green, .3);
+}
+
+/* Close button */
+.control-center .notification-row .notification-background .close-button {
+  background: transparent;
+  border-radius: 6px;
+  color: @text;
+  margin: 0;
+  padding: 4px;
+}
+
+.control-center .notification-row .notification-background .close-button:hover {
+  background-color: alpha(@urgent, .25);
+  color: @urgent;
+}
+
+.control-center .notification-row .notification-background .close-button:active {
+  background-color: alpha(@urgent, .45);
+}
+
+/* ── Shared progress / trough ──────────────────────────────────────── */
+progressbar,
+progress,
+trough {
+  border-radius: 12px;
+}
+
+progressbar {
+  background-color: rgba(255,255,255,.08);
+}
+
+/* ── Notification group ────────────────────────────────────────────── */
+.notification-group {
+  margin: 2px 8px;
+}
+
+.notification-group-headers {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: @text;
+  letter-spacing: 2px;
+}
+
+.notification-group-icon {
+  color: @text;
+}
+
+.notification-group-collapse-button,
+.notification-group-close-all-button {
+  background: transparent;
+  color: @text;
+  margin: 4px;
+  border-radius: 6px;
+  padding: 4px;
+}
+
+.notification-group-collapse-button:hover,
+.notification-group-close-all-button:hover {
+  background: @hover;
+}
+
+/* =====================================================================
+   WIDGETS
+   ===================================================================== */
+
+/* ── Header label ───────────────────────────────────────────────────── */
+.widget-label {
+  font-size: 1.6rem;
+  margin: 4px 6px 2px;
+  color: alpha(@text, .45);
+}
+
+/* ── Title + clear-all ─────────────────────────────────────────────── */
+.widget-title {
+  font-size: 1.2em;
+  margin: 6px;
+}
+
+.widget-title button {
+  background: @background-alt;
+  border-radius: 6px;
+  padding: 4px 16px;
+  border: 1px solid transparent;
+}
+
+.widget-title button:hover {
+  background: @hover;
+  border-color: alpha(@green, .4);
+}
+
+.widget-title button:active {
+  background: alpha(@green, .3);
+}
+
+/* ── Do Not Disturb ────────────────────────────────────────────────── */
+.widget-dnd {
+  margin: 6px;
+  font-size: 1.05rem;
+  background: @background-alt;
+  border-radius: 12px;
+  padding: 8px 12px;
+  border: 1px solid alpha(@fg, .08);
+}
+
+.widget-dnd > switch {
+  background: alpha(@bg3, .9);
+  font-size: initial;
+  border-radius: 999px;
+  box-shadow: none;
+  padding: 3px;
+  min-width: 44px;
+  min-height: 22px;
+  border: 1px solid alpha(@fg, .15);
+}
+
+.widget-dnd > switch:hover {
+  border-color: alpha(@green, .5);
+}
+
+.widget-dnd > switch:checked {
+  background: alpha(@green, .3);
+  border-color: @green;
+}
+
+.widget-dnd > switch:checked:hover {
+  background: alpha(@green, .4);
+}
+
+.widget-dnd > switch slider {
+  background: @fg;
+  border-radius: 999px;
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.widget-dnd > switch:checked slider {
+  background: @green;
+}
+
+/* ── Quick-buttons grid ────────────────────────────────────────────── */
+.widget-buttons-grid {
+  font-size: x-large;
+  padding: 6px 2px;
+  margin: 6px;
+  border-radius: 12px;
+  background: @background-alt;
+  border: 1px solid alpha(@fg, .06);
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button {
+  margin: 4px 10px;
+  padding: 6px 12px;
+  background: transparent;
+  border-radius: 8px;
+  border: 1px solid transparent;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+  background: @hover;
+  border-color: alpha(@green, .4);
+}
+
+.widget-buttons-grid > flowbox > flowboxchild > button.active {
+  background: alpha(@green, .25);
+  border-color: @green;
+  color: @green;
+}
+
+/* First two buttons are brightness up/down — tint them yellow */
+.widget-buttons-grid > flowbox > flowboxchild:nth-child(1) > button,
+.widget-buttons-grid > flowbox > flowboxchild:nth-child(2) > button {
+  color: @yellow;
+}
+
+.widget-buttons-grid > flowbox > flowboxchild:nth-child(1) > button:hover,
+.widget-buttons-grid > flowbox > flowboxchild:nth-child(2) > button:hover {
+  background: alpha(@yellow, .2);
+  border-color: alpha(@yellow, .5);
+  color: @yellow;
+}
+
+/* ── Volume slider ─────────────────────────────────────────────────── */
+.widget-volume {
+  background: @background-alt;
+  border-radius: 12px;
+  margin: 6px;
+  padding: 8px 12px;
+  border: 1px solid alpha(@fg, .06);
+}
+
+.widget-volume > box > image,
+.widget-volume > box > label {
+  color: @green;
+  font-size: 1.15rem;
+  margin-right: 10px;
+  min-width: 22px;
+}
+
+.widget-volume scale {
+  padding: 4px 0;
+}
+
+.widget-volume scale trough {
+  background: alpha(@bg3, .7);
+  border-radius: 999px;
+  min-height: 6px;
+}
+
+.widget-volume scale trough highlight,
+.widget-volume scale trough progress {
+  background: @green;
+  border-radius: 999px;
+  min-height: 6px;
+}
+
+.widget-volume scale slider {
+  background: @fg;
+  border-radius: 999px;
+  min-width: 16px;
+  min-height: 16px;
+  box-shadow: 0 1px 5px rgba(0,0,0,.55);
+  border: 2px solid @green;
+  transition: 150ms;
+}
+
+.widget-volume scale slider:hover {
+  background: @green;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+/* per-app rows */
+.per-app-volume {
+  background: alpha(@bg3, .3);
+  border-radius: 8px;
+  margin: 3px 0;
+  padding: 4px 8px;
+}
+
+/* ── Brightness (backlight) slider ─────────────────────────────────── */
+.widget-backlight {
+  background: @background-alt;
+  border-radius: 12px;
+  margin: 6px;
+  padding: 8px 12px;
+  border: 1px solid alpha(@fg, .06);
+}
+
+.widget-backlight > box > image,
+.widget-backlight > box > label {
+  color: @yellow;
+  font-size: 1.15rem;
+  margin-right: 10px;
+  min-width: 22px;
+}
+
+.widget-backlight scale {
+  padding: 4px 0;
+}
+
+.widget-backlight scale trough {
+  background: alpha(@bg3, .7);
+  border-radius: 999px;
+  min-height: 6px;
+}
+
+.widget-backlight scale trough highlight,
+.widget-backlight scale trough progress {
+  background: @yellow;
+  border-radius: 999px;
+  min-height: 6px;
+}
+
+.widget-backlight scale slider {
+  background: @fg;
+  border-radius: 999px;
+  min-width: 16px;
+  min-height: 16px;
+  box-shadow: 0 1px 5px rgba(0,0,0,.55);
+  border: 2px solid @yellow;
+  transition: 150ms;
+}
+
+.widget-backlight scale slider:hover {
+  background: @yellow;
+  min-width: 18px;
+  min-height: 18px;
+}
+
+/* ── MPRIS music player ─────────────────────────────────────────────── */
+.widget-mpris {
+  background: @background-alt;
+  border-radius: 16px;
+  color: @text;
+  margin: 8px 6px;
+  border: 1px solid alpha(@fg, .06);
+}
+
+.widget-mpris-player {
+  background-color: @background;
+  border-radius: 22px;
+  padding: 6px 14px;
+  margin: 6px;
+}
+
+.widget-mpris > box > button {
+  color: @text;
+  border-radius: 20px;
+}
+
+.widget-mpris button {
+  color: alpha(@text, .55);
+}
+
+.widget-mpris button:hover {
+  color: @text;
+}
+
+.widget-mpris-album-art {
+  border-radius: 16px;
+}
+
+.widget-mpris-title {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.widget-mpris-subtitle {
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+picture.mpris-background {
+  opacity: 0;
+}

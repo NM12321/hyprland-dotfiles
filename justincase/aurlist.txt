@@ -1,0 +1,12 @@
+debtap
+eww
+google-chrome
+libcs50
+paru
+paru-debug
+python-pywal16
+swww
+swww-debug
+ttf-space-mono
+wlogout
+yay-git

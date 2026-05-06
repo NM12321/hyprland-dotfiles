@@ -1,0 +1,101 @@
+@import "shared/colors.rasi"
+@import "shared/fonts.rasi"
+
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       500px;
+    border-radius:               16px;
+    border-color:                @selected;
+    background-color:            @background;
+    cursor:                      "default";
+}
+
+mainbox {
+    spacing:                     10px;
+    padding:                     30px;
+    background-color:            transparent;
+    children:                    [ "inputbar", "listview" ];
+}
+
+inputbar {
+    border-radius:               16px;
+    background-color:            @background-alt;
+    text-color:                  @foreground;
+    children:                    [ "prompt", "entry" ];
+}
+
+prompt {
+    padding:                     12px;
+    border-radius:               16px;
+    background-color:            @selected;
+    text-color:                  @background;
+}
+
+entry {
+    padding:                     12px;
+    background-color:            inherit;
+    text-color:                  inherit;
+    cursor:                      text;
+    placeholder:                 "Search wallpapers...";
+    placeholder-color:           inherit;
+}
+
+listview {
+    columns:                     1;
+    lines:                       8;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    spacing:                     6px;
+    background-color:            transparent;
+    text-color:                  @foreground;
+}
+
+element {
+    padding:                     8px 12px;
+    border-radius:               12px;
+    background-color:            transparent;
+    text-color:                  @foreground;
+    cursor:                      pointer;
+}
+
+element normal.normal {
+    background-color:            @background-alt;
+    text-color:                  @foreground;
+}
+
+element alternate.normal {
+    background-color:            @background-alt;
+    text-color:                  @foreground;
+}
+
+element selected.normal {
+    border:                      0px 5px 0px 5px;
+    border-radius:               12px;
+    border-color:                @selected;
+    background-color:            @background-alt;
+    text-color:                  @selected;
+}
+
+element-icon {
+    size:                        0px;
+}
+
+element-text {
+    background-color:            transparent;
+    text-color:                  inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+error-message {
+    padding:                     15px;
+    border:                      2px solid;
+    border-radius:               16px;
+    border-color:                @selected;
+    background-color:            @background;
+    text-color:                  @foreground;
+}

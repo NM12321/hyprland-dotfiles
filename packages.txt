@@ -1,0 +1,117 @@
+# Cleaned Hyprland Rice Package Lists
+
+These are the packages from your lists that are ACTUALLY useful for recreating your Hyprland rice/setup.
+
+I removed:
+- browsers
+- Discord
+- random KDE games/apps
+- office/media apps
+- development stuff not related to the rice
+- duplicate/debug packages
+- unrelated desktop apps
+
+---
+
+# Keep From `pkglist.txt`
+
+base
+base-devel
+blueman
+bluez-utils
+brightnessctl
+btop
+cava
+cliphist
+dnsmasq
+dunst
+eww
+fastfetch
+fish
+git
+grim
+gsimplecal
+hyprland
+hyprlock
+hyprpaper
+hyprshot
+kde-cli-tools
+kde-gtk-config
+kglobalacceld
+kitty
+kvantum
+layer-shell-qt
+lxappearance
+nano
+network-manager-applet
+networkmanager
+papirus-icon-theme
+paru
+pavucontrol
+polkit-gnome
+polkit-kde-agent
+python-dbus
+python-pywal16
+qt5-tools
+qt5-wayland
+qt5ct
+qt6-wayland
+qt6ct
+reflector
+rofi
+sddm
+slurp
+swaync
+swww
+sudo
+ttf-cascadia-code-nerd
+ttf-jetbrains-mono
+ttf-jetbrains-mono-nerd
+ttf-space-mono
+vim
+waybar
+wl-clip-persist
+wl-clipboard
+wlogout
+woff2-font-awesome
+wofi
+xdg-desktop-portal-kde
+yad
+yazi
+zram-generator
+
+---
+
+# Keep From `aurlist.txt`
+
+debtap
+eww
+paru
+python-pywal16
+swww
+ttf-space-mono
+wlogout
+yay-git
+
+---
+
+# Important Config Folders To Save
+
+~/.config/hypr
+~/.config/waybar
+~/.config/rofi
+~/.config/kitty
+~/.config/gtk-3.0
+~/.config/gtk-4.0
+~/.config/qt5ct
+~/.config/qt6ct
+~/.config/swaync
+~/.config/fastfetch
+
+---
+
+# Restore Commands
+
+sudo pacman -S --needed - < pkglist.txt
+
+yay -S --needed - < aurlist.txt
