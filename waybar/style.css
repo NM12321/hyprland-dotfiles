@@ -1,136 +1,165 @@
 @import "colors.css";
 
 * {
-    all: unset;
-    font-family: "JetBrainsMono Nerd Font Propo", "Rubik", "Noto Sans CJK JP", "Noto Sans CJK KR";
-    font-size: 15px;
+  all: unset;
+  font-family: "JetBrainsMono Nerd Font Propo", "Rubik", "Noto Sans CJK JP", "Noto Sans CJK KR";
+  font-size: 17px;
 }
 
 window#waybar {
-    background: transparent;
+  color: #e8e8e8;
 }
 
 tooltip {
-    background-color: @bg1;
-    color: @fg;
-    padding: 8px 14px;
-    border-radius: 10px;
+  background: #111111;
+  color: #e8e8e8;
+  padding: 8px 14px;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 /* ── LEFT ── */
-
 #workspaces {
-    background-color: @bg1;
-    padding: 4px 6px;
-    margin: 6px 0;
-    border-radius: 10px;
+  background: #111111;
+  padding: 0 6px;
+  color: #e8e8e8;
+  margin: 5px 4px 5px 8px;
 }
 
 #workspaces button {
-    background-color: transparent;
-    color: @grey1;
-    padding: 2px 8px;
-    border-radius: 8px;
-    margin: 0 2px;
-    transition: all 200ms ease-in-out;
-    min-width: 4px;
+  color: #888888;
+  padding: 4px 12px;
+  background: transparent;
+  transition: all 150ms ease-in-out;
+  min-width: 24px;
+}
+
+#workspaces button:hover {
+  background: #1f1f1f;
+  color: #ffffff;
 }
 
 #workspaces button.active {
-    background-color: @orange;
-    color: @bg1;
-    min-width: 1.6rem;
-    font-weight: 600;
+  background: #222222;
+  color: #ffffff;
+  min-width: 32px;
+  font-weight: 700;
+  border-bottom: 2px solid #ffffff;
 }
 
 #workspaces button.empty {
-    color: @fg;
-    opacity: 0.4;
-}
-#workspaces button:hover {
-    background-color: @bg2;
-    color: @fg;
+  color: #444444;
 }
 
 #bluetooth {
-    background-color: @bg1;
-    color: @blue;
-    padding: 6px 14px;
-    border-radius: 10px;
-    margin: 6px 0 6px 6px;
-    transition: all 200ms ease-in-out;
+  color: #aaaaaa;
+  padding: 4px 16px;
+  margin: 5px 2px;
+  background: #111111;
+  transition: all 150ms ease-in-out;
 }
 
 #bluetooth.connected {
-    color: @blue;
+  color: #e8e8e8;
 }
 
 #bluetooth.disabled,
 #bluetooth.off {
-    color: @grey2;
-    opacity: 0.5;
+  color: #444444;
 }
 
 #bluetooth:hover {
-    background-color: @bg2;
-    color: @fg;
+  background: #1f1f1f;
+  color: #ffffff;
 }
 
 /* ── CENTER ── */
-
 #custom-mpris {
-    background-color: @bg1;
-    color: @fg;
-    padding: 6px 16px;
-    border-radius: 10px;
-    margin: 6px 0;
+  color: #cccccc;
+  padding: 4px 18px;
+  background: #111111;
+  margin: 5px 2px;
+  font-size: 15px;
+  transition: all 150ms ease-in-out;
 }
+
+#custom-mpris:hover {
+  background: #1a1a1a;
+  color: #ffffff;
+}
+
+#custom-mpris.playing {
+  color: #cccccc;
+  border-bottom: 2px solid #e97c00;
+}
+
 #custom-mpris.paused {
-    color: @grey0;
+  color: #555555;
 }
 
 #custom-mpris.stopped,
 #custom-mpris.disconnected {
-    color: @grey2;
-    opacity: 0.6;
+  color: #333333;
 }
 
 /* ── RIGHT ── */
-
 #pulseaudio,
 #network,
 #clock {
-    background-color: @bg1;
-    color: @fg;
-    padding: 6px 16px;
-    border-radius: 10px;
-    margin: 6px 3px;
+  color: #e8e8e8;
+  padding: 4px 18px;
+  background: #111111;
+  margin: 5px 2px;
 }
 
 #pulseaudio.muted {
-    color: @grey0;
+  color: #444444;
 }
 
 #clock {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 #custom-power {
-    background-color: @bg1;
-    color: #ffffff;
-    padding: 6px 16px;
-    border-radius: 10px;
-    margin: 6px 3px;
-    font-size: 18px;
+  color: #ffffff;
+  padding: 4px 18px;
+  background: #111111;
+  margin: 5px 8px 5px 2px;
+  font-size: 20px;
 }
 
 #custom-power:hover {
-    background-color: #1793d1;
+  background: @blue;
 }
+
 #memory {
-    background-color: @bg1;
-    border-radius: 10px;
-    margin: 7px 4px;
-    font-size: 14px;
-    color: orange;
+  background: #111111;
+  margin: 5px 2px;
+  font-size: 16px;
+  color: #e97c00;
+  padding: 4px 14px;
+}
+
+#custom-cava {
+  color: #f9f9f9;
+  padding: 4px 18px;
+  background: #111111;
+  margin: 5px 8px 5px 2px;
+  font-size: 20px;
+  min-width: 100px;
+}
+
+#cpu {
+  color: #e97c00;
+  padding: 4px 18px;
+  background: #111111;
+  margin: 5px 8px 5px 2px;
+  font-size: 20px;
+}
+
+#custom-gpu {
+  color: #e97c00;
+  padding: 4px 18px;
+  background: #111111;
+  margin: 5px 8px 5px 2px;
+  font-size: 20px;
 }

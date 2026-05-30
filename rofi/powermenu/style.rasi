@@ -1,146 +1,116 @@
 /**
-* Powermenu — Icons only, top center
-* Fixed: feather font → JetBrainsMono Nerd Font Mono
-* Fixed: truncation by removing text labels from .sh
+* Powermenu — Black & White theme
 **/
-/*****----- Configuration -----*****/
+
 configuration {
-show-icons: false;
+  show-icons: false;
 }
-/*****----- Global Properties -----*****/
+
 @import "shared/colors.rasi"
 @import "shared/fonts.rasi"
-/*****----- Main Window -----*****/
+
+* {
+  background-color: transparent;
+  text-color:       #e8e8e8;
+}
+
 window {
-transparency: "real";
-location: north;
-anchor: north;
-fullscreen: false;
-width: 480px;
-x-offset: 0px;
-y-offset: 6px;
- enabled: true;
-margin: 0px;
-padding: 0px;
-border: 0px solid;
-border-radius: 20px;
-border-color: @selected;
-cursor: "default";
-background-color: @background;
+  transparency:     "real";
+  location:         north;
+  anchor:           north;
+  fullscreen:       false;
+  width:            480px;
+  x-offset:         0px;
+  y-offset:         8px;
+  margin:           0px;
+  padding:          0px;
+  border:           1px solid;
+  border-radius:    0px;
+  border-color:     #333333;
+  background-color: #0a0a0a;
 }
-/*****----- Main Box -----*****/
+
 mainbox {
-enabled: true;
-spacing: 12px;
-margin: 0px;
-padding: 14px 18px;
-border: 0px solid;
-border-radius: 0px;
-border-color: @selected;background-color: transparent;
-children: [ "inputbar", "listview" ];
+  spacing:          12px;
+  padding:          14px 18px;
+  background-color: transparent;
+  children:         [ "inputbar", "listview" ];
 }
-/*****----- Inputbar -----*****/
+
 inputbar {
-enabled: true;
-spacing: 12px;
-margin: 0px;
-padding: 0px;
-border: 0px;
-border-radius: 0px;
-border-color: @selected;
-background-color: transparent;
-text-color: @foreground;
-children: [ "textbox-prompt-colon", "prompt" ];
+  spacing:          12px;
+  padding:          0px;
+  background-color: transparent;
+  text-color:       #e8e8e8;
+  children:         [ "prompt" ];
 }
-dummy {
-background-color: transparent;
-}
-textbox-prompt-colon {
-enabled: false;
-expand: false;
-padding: 8px 12px;
-border-radius: 100%;
-background-color: @urgent;
-text-color: @background;
-}
+
 prompt {
-enabled: true;
-padding: 6px 10px;
-border-radius: 100%;
-background-color: @active;
-text-color: @background;
+  enabled:          true;
+  padding:          6px 12px;
+  border-radius:    0px;
+  background-color: #1a1a1a;
+  text-color:       #888888;
 }
-/*****----- Message -----*****/
+
 message {
-enabled: true;
-margin: 0px;padding: 10px;
-border: 0px solid;
-border-radius: 100%;
-border-color: @selected;
-background-color: @background-alt;
-text-color: @foreground;
+  padding:          10px;
+  border:           0px;
+  background-color: #111111;
+  text-color:       #888888;
 }
+
 textbox {
-background-color: inherit;
-text-color: inherit;
-vertical-align: 0.5;
-horizontal-align: 0.5;
-placeholder-color: @foreground;
-blink: true;
-markup: true;
+  background-color: inherit;
+  text-color:       inherit;
+  vertical-align:   0.5;
+  horizontal-align: 0.5;
+  markup:           true;
 }
+
 error-message {
-padding: 10px;
-border: 0px solid;
-border-radius: 0px;
-border-color: @selected;
-background-color: @background;
-text-color: @foreground;
+  padding:          10px;
+  background-color: #0a0a0a;
+  text-color:       #e8e8e8;
 }
-/*****----- Listview -----*****/
+
 listview {
-enabled: true;
-columns: 5;
-lines: 1;
-cycle: true;
-dynamic: false;
-scrollbar: false;
-layout: vertical;
-reverse: false;
-fixed-height: true;
-fixed-columns: true;
- spacing: 12px;
-margin: 0px;
-padding: 0px;
-border: 0px solid;border-radius: 0px;
-border-color: @selected;
-background-color: transparent;
-text-color: @foreground;
-cursor: "default";
+  enabled:          true;
+  columns:          5;
+  lines:            1;
+  cycle:            true;
+  dynamic:          false;
+  scrollbar:        false;
+  layout:           vertical;
+  fixed-height:     true;
+  fixed-columns:    true;
+  spacing:          10px;
+  padding:          0px;
+  background-color: transparent;
+  text-color:       #e8e8e8;
 }
-/*****----- Elements -----*****/
+
 element {
-enabled: true;
-spacing: 0px;
-margin: 0px;
-padding: 18px 8px;
-border: 0px solid;
-border-radius: 100%;
-border-color: @selected;
-background-color: @background-alt;
-text-color: @foreground;
-cursor: pointer;
+  padding:          18px 8px;
+  border:           1px solid;
+  border-radius:    0px;
+  border-color:     #222222;
+  background-color: #111111;
+  text-color:       #aaaaaa;
+  cursor:           pointer;
 }
+
 element-text {
-/* KEY FIX: use JetBrainsMono Nerd Font Mono instead of feather */
-font: "JetBrainsMono Nerd Font Mono 22";
-background-color: transparent;
-text-color: inherit;
-cursor: inherit;
-vertical-align: 0.5;
-horizontal-align: 0.5;
+  font:             "JetBrainsMono Nerd Font Mono 22";
+  background-color: transparent;
+  text-color:       inherit;
+  cursor:           inherit;
+  vertical-align:   0.5;
+  horizontal-align: 0.5;
 }
+
 element selected.normal {
-background-color: var(selected);
-text-color: var(background);
+  background-color: #e8e8e8;
+  text-color:       #0a0a0a;
+  border-color:     #ffffff;
 }

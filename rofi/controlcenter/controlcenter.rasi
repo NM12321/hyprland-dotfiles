@@ -1,0 +1,77 @@
+configuration {
+    show-icons: false;
+    mouse: true;
+}
+
+* {
+    background-color: transparent;
+    text-color: #e8e8e8;
+
+    font: "JetBrainsMono Nerd Font Mono 13";
+}
+
+window {
+    transparency: "real";
+
+    location: northeast;
+    anchor: northeast;
+
+    fullscreen: false;
+
+    width: 420px;
+
+    x-offset: -15px;
+    y-offset: 42px;
+
+    border: 1px solid;
+    border-color: #333333;
+
+    background-color: #0a0a0a;
+}
+
+mainbox {
+    padding: 16px;
+
+    background-color: transparent;
+
+    children: [ "listview" ];
+}
+
+listview {
+    columns: 1;
+    lines: 6;
+
+    spacing: 10px;
+
+    cycle: false;
+    dynamic: true;
+
+    scrollbar: false;
+
+    background-color: transparent;
+}
+
+element {
+    padding: 12px;
+
+    border: 1px solid;
+    border-color: #222222;
+
+    background-color: #111111;
+}
+
+element selected.normal {
+    background-color: #e8e8e8;
+
+    text-color: #0a0a0a;
+
+    border-color: #ffffff;
+}
+
+element-text {
+    background-color: transparent;
+
+    text-color: inherit;
+
+    vertical-align: 0.5;
+}

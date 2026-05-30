@@ -87,10 +87,6 @@
         {
           "label": "󰂯",
           "command": "blueman-manager"
-        },
-        {
-          "label": "󰐥",
-          "command": "systemctl poweroff"
         }
       ]
     }

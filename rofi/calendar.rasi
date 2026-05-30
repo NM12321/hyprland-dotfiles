@@ -1,0 +1,53 @@
+configuration {
+    show-icons: false;
+}
+
+* {
+    background-color: transparent;
+    text-color: #e8e8e8;
+
+    font: "JetBrainsMono Nerd Font Mono 14";
+
+    bg: #0a0a0a;
+    border: #333333;
+}
+
+window {
+    transparency: "real";
+
+    location: northeast;
+    anchor: northeast;
+
+    width: 400px;
+
+    x-offset: -15px;
+    y-offset: 42px;
+
+    border: 1px solid;
+    border-color: @border;
+
+    border-radius: 14px;
+
+    background-color: @bg;
+}
+
+mainbox {
+    children: [ textbox ];
+
+    background-color: transparent;
+}
+
+textbox {
+    padding: 24px;
+
+    background-color: transparent;
+
+    text-color: #e8e8e8;
+
+    font: "JetBrainsMono Nerd Font Mono Bold 15";
+
+    line-spacing: 6px;
+
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+}

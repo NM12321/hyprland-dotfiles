@@ -1,101 +1,126 @@
-@import "shared/colors.rasi"
-@import "shared/fonts.rasi"
+/**
+ * monochrome-search
+ */
+
+* {
+    font: "JetBrainsMono Nerd Font 13";
+
+    bg:         #000000e6;
+    bg-alt:     #0d0d0dff;
+    bg-hover:   #161616ff;
+
+    fg:         #f5f5f5ff;
+    fg-dim:     #8a8a8aff;
+
+    border:     #ffffff20;
+
+    background-color: transparent;
+    text-color: @fg;
+}
 
 window {
-    transparency:                "real";
-    location:                    center;
-    anchor:                      center;
-    fullscreen:                  false;
-    width:                       500px;
-    border-radius:               16px;
-    border-color:                @selected;
-    background-color:            @background;
-    cursor:                      "default";
+    transparency: "real";
+
+    location: center;
+    anchor: center;
+
+    width: 550px;
+
+    border: 1px;
+    border-color: @border;
+
+    border-radius: 0px;
+
+    background-color: @bg;
 }
 
 mainbox {
-    spacing:                     10px;
-    padding:                     30px;
-    background-color:            transparent;
-    children:                    [ "inputbar", "listview" ];
+    padding: 12px;
+    spacing: 10px;
+
+    children: [ inputbar, listview ];
 }
+
+/* SEARCH BAR */
 
 inputbar {
-    border-radius:               16px;
-    background-color:            @background-alt;
-    text-color:                  @foreground;
-    children:                    [ "prompt", "entry" ];
+    background-color: @bg-alt;
+
+    border: 1px 1px 1px 1px;
+    border-color: @border;
+
+    padding: 14px;
+
+    children: [ textbox-prompt-colon, entry ];
 }
 
-prompt {
-    padding:                     12px;
-    border-radius:               16px;
-    background-color:            @selected;
-    text-color:                  @background;
+textbox-prompt-colon {
+    expand: false;
+
+    str: " ";
+
+    font: "JetBrainsMono Nerd Font 13";
+
+    text-color: #ffffff;
+
+    margin: 0px 12px 0px 0px;
 }
 
 entry {
-    padding:                     12px;
-    background-color:            inherit;
-    text-color:                  inherit;
-    cursor:                      text;
-    placeholder:                 "Search wallpapers...";
-    placeholder-color:           inherit;
+    background-color: transparent;
+
+    text-color: @fg;
+
+    placeholder: "Search...";
+    placeholder-color: @fg-dim;
 }
 
+/* APPS */
+
 listview {
-    columns:                     1;
-    lines:                       8;
-    cycle:                       true;
-    dynamic:                     true;
-    scrollbar:                   false;
-    spacing:                     6px;
-    background-color:            transparent;
-    text-color:                  @foreground;
+    lines: 8;
+
+    spacing: 6px;
+
+    scrollbar: false;
+
+    background-color: transparent;
 }
 
 element {
-    padding:                     8px 12px;
-    border-radius:               12px;
-    background-color:            transparent;
-    text-color:                  @foreground;
-    cursor:                      pointer;
-}
+    padding: 12px;
 
-element normal.normal {
-    background-color:            @background-alt;
-    text-color:                  @foreground;
-}
+    spacing: 14px;
 
-element alternate.normal {
-    background-color:            @background-alt;
-    text-color:                  @foreground;
+    border-radius: 0px;
+
+    background-color: transparent;
+
+    text-color: @fg-dim;
 }
 
 element selected.normal {
-    border:                      0px 5px 0px 5px;
-    border-radius:               12px;
-    border-color:                @selected;
-    background-color:            @background-alt;
-    text-color:                  @selected;
+    background-color: @bg-hover;
+
+    border: 1px;
+    border-color: #ffffff35;
+
+    text-color: @fg;
 }
 
 element-icon {
-    size:                        0px;
+    size: 28px;
 }
 
 element-text {
-    background-color:            transparent;
-    text-color:                  inherit;
-    vertical-align:              0.5;
-    horizontal-align:            0.0;
+    text-color: inherit;
+    vertical-align: 0.5;
 }
 
-error-message {
-    padding:                     15px;
-    border:                      2px solid;
-    border-radius:               16px;
-    border-color:                @selected;
-    background-color:            @background;
-    text-color:                  @foreground;
+message {
+    background-color: transparent;
+}
+
+textbox {
+    background-color: transparent;
 }

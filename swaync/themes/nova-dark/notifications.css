@@ -1,47 +1,39 @@
 /* =====================================================================
    notifications.css  –  SwayNC Floating Notification Popups
-   Theme: Gruvbox Hard · nova-dark
+   Theme: Black & White
    ===================================================================== */
 
-@define-color text            @fg;
-@define-color background      @bg0;
-@define-color background-alt  @bg1;
-@define-color background-sec  @bg2;
-@define-color selected        @green;
-@define-color hover           alpha(@green, .25);
-@define-color urgent          @red;
-
 * {
-  color: @text;
-  all: unset;
-  font-size: 14px;
+  color:       #e8e8e8;
+  all:         unset;
+  font-size:   14px;
   font-family: "JetBrains Mono Nerd Font 10";
-  transition: 200ms;
+  transition:  200ms;
 }
 
 .notification-row {
   outline: none;
-  margin: 0;
+  margin:  0;
   padding: 0;
 }
 
 /* ── Popup container ───────────────────────────────────────────────── */
 .floating-notifications.background .notification-row .notification-background {
-  background: alpha(@bg0, .65);
-  box-shadow: 0 0 12px 0 rgba(0,0,0,.65);
-  border: 1px solid alpha(@green, .4);
-  border-radius: 24px;
-  margin: 16px;
-  padding: 0;
+  background:    #0f0f0f;
+  box-shadow:    0 0 12px 0 rgba(0,0,0,.8);
+  border:        1px solid #2a2a2a;
+  border-radius: 0px;
+  margin:        12px;
+  padding:       0;
 }
 
 .floating-notifications.background .notification-row .notification-background .notification {
-  padding: 6px;
-  border-radius: 12px;
+  padding:       6px;
+  border-radius: 0px;
 }
 
 .floating-notifications.background .notification-row .notification-background .notification.critical {
-  border: 2px solid @urgent;
+  border: 2px solid #ffffff;
 }
 
 .floating-notifications.background .notification-row .notification-background .notification .notification-content {
@@ -54,19 +46,19 @@
 
 /* Action buttons */
 .floating-notifications.background .notification-row .notification-background .notification > *:last-child > * .notification-action {
-  border-radius: 8px;
-  background-color: @background-alt;
-  margin: 6px;
-  border: 1px solid transparent;
+  border-radius:    0px;
+  background-color: #1a1a1a;
+  margin:           6px;
+  border:           1px solid #2a2a2a;
 }
 
 .floating-notifications.background .notification-row .notification-background .notification > *:last-child > * .notification-action:hover {
-  background-color: @hover;
-  border: 1px solid alpha(@green, .5);
+  background-color: #252525;
+  border:           1px solid #444444;
 }
 
 .floating-notifications.background .notification-row .notification-background .notification > *:last-child > * .notification-action:active {
-  background-color: alpha(@green, .3);
+  background-color: #333333;
 }
 
 /* ── Content ────────────────────────────────────────────────────────── */
@@ -76,44 +68,43 @@
 
 .summary {
   font-weight: 800;
-  font-size: 1rem;
+  font-size:   1rem;
+  color:       #ffffff;
 }
 
 .body {
   font-size: 0.8rem;
-  color: alpha(@fg, .75);
+  color:     #888888;
 }
 
 /* ── Close button ──────────────────────────────────────────────────── */
 .floating-notifications.background .notification-row .notification-background .close-button {
-  margin: 6px;
-  padding: 2px;
-  border-radius: 6px;
+  margin:           6px;
+  padding:          2px;
+  border-radius:    0px;
   background-color: transparent;
-  border: 1px solid transparent;
+  border:           1px solid transparent;
 }
 
 .floating-notifications.background .notification-row .notification-background .close-button:hover {
-  background-color: alpha(@urgent, .25);
-  color: @urgent;
+  background-color: #222222;
+  color:            #ffffff;
 }
 
 .floating-notifications.background .notification-row .notification-background .close-button:active {
-  background-color: alpha(@urgent, .45);
+  background-color: #333333;
 }
 
-/* ── Progress bars inside popups ───────────────────────────────────── */
-progressbar,
-progress,
-trough {
-  border-radius: 12px;
+/* ── Progress bars ─────────────────────────────────────────────────── */
+progressbar, progress, trough {
+  border-radius: 0px;
 }
 
 .notification.critical progress {
-  background-color: @urgent;
+  background-color: #ffffff;
 }
 
 .notification.low progress,
 .notification.normal progress {
-  background-color: @green;
+  background-color: #aaaaaa;
 }

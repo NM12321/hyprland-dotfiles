@@ -1,22 +1,37 @@
 {
-    "spacing": 6,
+    "spacing": 5,
     "margin-top": 10,
     "margin-left": 10,
     "margin-right": 10,
     "modules-left": [
         "hyprland/workspaces",
-        "bluetooth",
-        "memory"
+        "cpu",
+        "memory",
+        "custom/gpu"
     ],
     "modules-center": [
         "custom/power",
         "custom/mpris"
     ],
+    "cpu": {
+        "interval": 2,
+        "format": " {usage}%",
+        "tooltip": true,
+        "tooltip-format": "AMD Ryzen 3 3250u"
+    },
     "modules-right": [
+        "custom/cava",
         "pulseaudio",
         "network",
+        "bluetooth",
         "clock"
     ],
+    "custom/cava": {
+        "exec": "~/.config/waybar/scripts/cava.sh",
+        "restart-interval": 1,
+        "font-family": "JetBrainsMono Nerd Font",
+        "return-type": "text"
+    },
     "hyprland/workspaces": {
         "format": "{name}",
         "persistent-workspaces": {
@@ -34,14 +49,19 @@
     },
     "custom/mpris": {
         "exec": "~/.config/waybar/scripts/mpris.sh",
-        "interval": 2,
-        "max-length": 60
+        "interval": 3,
+        "max-length": 81,
+        "return-type": "json",
+        "on-click": "python4 ~/.config/waybar/scripts/popup.py",
+        "on-click-middle": "playerctl play-pause",
+        "on-scroll-up": "playerctl next",
+        "on-scroll-down": "playerctl previous",
+        "on-click-right": "playerctl previous"
     },
     "clock": {
         "interval": 60,
         "format": "{:%a, %d. %b  %H:%M}",
         "tooltip": false,
-        "on-click": "~/.config/waybar/scripts/calendar.sh"
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
@@ -86,12 +106,15 @@
     },
     "network": {
         "format-wifi": "󰖩 {essid}",
+        "format-ethernet": "󰈀 Ethernet",
         "format-disconnected": "󰖪 disconnected",
         "on-click": "nm-connection-editor"
     },
     "memory": {
         "interval": 30,
-        "format": " {used:0.1f}G/{total:0.1f}G "
+        "format": "󰘚 {used:0.1f}G/{total:0.1f}G ",
+        "tooltip": true,
+        "tootltip-format": "󰘚 {used:0.1f}G/{total:0.1f}G "
     },
     "bluetooth": {
         "format": "󰂯",
@@ -101,5 +124,23 @@
         "tooltip-format": "{controller_alias}\n{num_connections} connected",
         "tooltip-format-connected": "{device_enumerate}",
         "on-click": "blueman-manager"
-    }
+    },
+    "custom/gpu": {
+        "exec": "cat /sys/devices/pci0000:00/0000:00:08.1/0000:04:00.0/gpu_busy_percent",
+        "interval": 2,
+        "format": "󰢮 {}%",
+        "tooltip": true,
+        "tooltip-format": "AMD Radeon Vega 3 Graphics"
+    },
+    // "custom/gpu": {
+    //     "exec": "~/.config/waybar/scripts/gpu-switch.sh --status",
+    //     "return-type": "json",
+    //     "interval": 30,
+    //     "on-click": "~/.config/waybar/scripts/gpu-switch.sh --switch",
+    //     "tooltip": true
+    // }
+    "exclusive": false,
+    "passthrough": false,
+    "layer": "top",
+    "exclusive": true,
 }

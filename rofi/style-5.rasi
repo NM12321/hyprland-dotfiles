@@ -1,113 +1,126 @@
 /**
-* nova-dark — Unified Rofi Theme
-* Dark ink · sepia aesthetic
-**/
+ * monochrome-search
+ */
+
 * {
-background: #1a1a1aFF;
-background-alt: #222222FF;
-background-hl: #2c2c2cFF;
-foreground: #EBDBB2FF;
-foreground-dim: #7c6f64FF;
-selected: #83A598FF;
-active: #B8BB26FF;
-urgent: #FB4934FF;
-border-col: #83A59840;
- font: "JetBrainsMono Nerd Font 13";
-background-color: transparent;
-text-color: @foreground;
+    font: "JetBrainsMono Nerd Font 13";
+
+    bg:         #000000e6;
+    bg-alt:     #0d0d0dff;
+    bg-hover:   #161616ff;
+
+    fg:         #f5f5f5ff;
+    fg-dim:     #8a8a8aff;
+
+    border:     #ffffff20;
+
+    background-color: transparent;
+    text-color: @fg;
 }
+
 window {
-transparency: "real";
-location: center;
-anchor: center;
-fullscreen: false;
-width: 580px;
-border: 1px solid;
-border-radius: 18px;
-border-color: @border-col;
-background-color: @background;
-cursor: "default";
+    transparency: "real";
+
+    location: center;
+    anchor: center;
+
+    width: 550px;
+
+    border: 1px;
+    border-color: @border;
+
+    border-radius: 0px;
+
+    background-color: @bg;
 }
+
 mainbox {
-spacing: 0px;
-padding: 0px;
-background-color: @background;
-children: [ "inputbar", "listview" ];
+    padding: 12px;
+    spacing: 10px;
+
+    children: [ inputbar, listview ];
 }
-/* ── Input bar ── */
+
+/* SEARCH BAR */
+
 inputbar {
-spacing: 0px;padding: 16px 20px;
-border: 0px 0px 1px 0px;
-border-color: @border-col;
-background-color: @background;
-text-color: @foreground;
-children: [ "prompt", "entry" ];
+    background-color: @bg-alt;
+
+    border: 1px 1px 1px 1px;
+    border-color: @border;
+
+    padding: 14px;
+
+    children: [ textbox-prompt-colon, entry ];
 }
-prompt {
-padding: 0px 12px 0px 0px;
-background-color: transparent;
-text-color: @selected;
-font: "JetBrainsMono Nerd Font Bold 14";
+
+textbox-prompt-colon {
+    expand: false;
+
+    str: " ";
+
+    font: "JetBrainsMono Nerd Font 13";
+
+    text-color: #ffffff;
+
+    margin: 0px 12px 0px 0px;
 }
+
 entry {
-padding: 0px;
-background-color: transparent;
-text-color: @foreground;
-cursor: text;
-placeholder: "type to search...";
-placeholder-color: @foreground-dim;
+    background-color: transparent;
+
+    text-color: @fg;
+
+    placeholder: "Search...";
+    placeholder-color: @fg-dim;
 }
-/* ── List ── */
+
+/* APPS */
+
 listview {
-padding: 8px;
-columns: 1;
-lines: 9;
-cycle: true;
-dynamic: true;
-scrollbar: false;
-spacing: 2px;
-background-color: @background;
+    lines: 8;
+
+    spacing: 6px;
+
+    scrollbar: false;
+
+    background-color: transparent;
 }
-/* ── Elements ── */
+
 element {
-padding: 9px 14px;
-spacing: 12px;
-border-radius: 10px;
-background-color: transparent;
-text-color: @foreground-dim;
-cursor: pointer;}
-element normal.normal {
-background-color: transparent;
-text-color: @foreground-dim;
+    padding: 12px;
+
+    spacing: 14px;
+
+    border-radius: 0px;
+
+    background-color: transparent;
+
+    text-color: @fg-dim;
 }
-element alternate.normal {
-background-color: transparent;
-text-color: @foreground-dim;
-}
+
 element selected.normal {
-background-color: @background-hl;
-text-color: @foreground;
-border: 0px 0px 0px 2px;
-border-color: @selected;
-border-radius: 10px;
+    background-color: @bg-hover;
+
+    border: 1px;
+    border-color: #ffffff35;
+
+    text-color: @fg;
 }
+
 element-icon {
-size: 24px;
-background-color: transparent;
-cursor: inherit;
+    size: 28px;
 }
+
 element-text {
-background-color: transparent;
-text-color: inherit;
-vertical-align: 0.5;
-horizontal-align: 0.0;
-cursor: inherit;
+    text-color: inherit;
+    vertical-align: 0.5;
 }
-error-message {
-padding: 20px;
-border: 1px solid;
-border-radius: 12px;
-border-color: @urgent;
-background-color: @background;
-text-color: @foreground;
+
+message {
+    background-color: transparent;
+}
+
+textbox {
+    background-color: transparent;
 }
